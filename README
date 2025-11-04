@@ -1,0 +1,20 @@
+Title: Frankentext generator
+
+The program reads the contents of Frankenstein.txt, tokenizes the text into words, and builds a successor map — 
+a structure that records which words tend to follow which others.
+Using this data, it generates new sentences that start with a capitalized word and end when a word ends with ., !, or ?.
+
+How it works: 
+
+All non-printable characters in the book are replaced with spaces.
+The text is split into tokens (words) using delimiters like spaces and newlines.
+Each unique token is stored in the tokens array, and their relationships (successors) are recorded.
+
+A sentence begins with a randomly chosen word that starts with a capital letter.
+Each next word is selected randomly from the current word’s list of successors.
+
+Sentence generation stops when:
+
+  1. A word ends with ., !, or ?
+  2. The sentence reaches the buffer limit.
+
